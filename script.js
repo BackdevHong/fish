@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let isMouseDown = false;
+  let isTouchDown = false; // 터치 여부 확인 변수
+  let isMouseDown = false; // 기존 마우스 눌림 여부 확인 변수
   const gaugeFill = document.getElementById("gauge-fill");
   const gauge = document.getElementById("gauge");
   const fish = document.getElementById("fish");
@@ -36,10 +37,22 @@ document.addEventListener("DOMContentLoaded", () => {
     isMouseDown = false;
   });
 
+  // 터치 시작 시 (마우스 클릭처럼 처리)
+  document.addEventListener("touchstart", (e) => {
+    isTouchDown = true;
+    e.preventDefault(); // 터치로 인한 기본 동작 방지
+  });
+
+  // 터치 끝났을 때 (마우스 떼기처럼 처리)
+  document.addEventListener("touchend", () => {
+    isTouchDown = false;
+  });
+
   // 게이지 업데이트
   function updateGauge() {
     // 게이지 움직임 처리 (마우스 클릭 시 위로 올라가거나, 떼면 내려감)
-    if (isMouseDown) {
+    if (isMouseDown || isTouchDown) {
+      // 마우스 또는 터치로 눌렀을 때
       if (gaugePosition < maxGaugePosition) {
         gaugePosition += gaugeSpeed;
       }

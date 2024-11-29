@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const minFishPosition = 0;
   const maxFishPosition = 1750;
 
-  const gaugeSpeed = 10; // 게이지 속도
+  const gaugeSpeed = 8; // 게이지 속도
   let fishPosition = 0; // 물고기 초기 위치
   const fishSpeed = 25; // 물고기 속도 (물고기의 이동 속도)
   let fishDirection = 1; // 1이면 내려가고, -1이면 올라가는 방향

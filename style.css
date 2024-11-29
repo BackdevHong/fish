@@ -1,5 +1,7 @@
-* {
-  user-select: none;
+/* 텍스트 선택 방지 */
+body,
+.fishing-game {
+  user-select: none; /* 모든 텍스트 선택 방지 */
 }
 
 .fishing-game {
@@ -9,8 +11,10 @@
   background-color: #f1f1f1;
   border: 2px solid #000;
   overflow: hidden;
+  user-select: none; /* 이 div 내에서 텍스트 선택 방지 */
 }
 
+/* 나머지 스타일은 그대로 유지 */
 .gauge-wrapper {
   position: absolute;
   bottom: 20px;
@@ -19,7 +23,7 @@
   height: 100%;
   transform: translateX(-50%);
   display: flex;
-  justify-content: space-around; /* 두 번째 게이지를 배치하기 위한 여백 */
+  justify-content: space-around;
 }
 
 .gauge {
@@ -46,7 +50,7 @@
   bottom: 0%;
   width: 100%;
   height: 0%;
-  background-color: red; /* 두 번째 게이지는 빨간색 */
+  background-color: red;
   transition: transform 0.1s ease;
 }
 

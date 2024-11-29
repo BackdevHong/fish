@@ -1,7 +1,9 @@
-/* 텍스트 선택 방지 */
+/* 기본 텍스트 선택 방지 */
 body,
 .fishing-game {
-  user-select: none; /* 모든 텍스트 선택 방지 */
+  user-select: none; /* 텍스트 선택 방지 */
+  -webkit-user-select: none; /* iOS에서 텍스트 선택 방지 */
+  touch-action: none; /* 터치 동작 방지 */
 }
 
 .fishing-game {
@@ -11,10 +13,8 @@ body,
   background-color: #f1f1f1;
   border: 2px solid #000;
   overflow: hidden;
-  user-select: none; /* 이 div 내에서 텍스트 선택 방지 */
 }
 
-/* 나머지 스타일은 그대로 유지 */
 .gauge-wrapper {
   position: absolute;
   bottom: 20px;

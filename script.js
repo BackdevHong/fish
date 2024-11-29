@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let isTouchDown = false; // 터치 여부 확인 변수
   let isMouseDown = false; // 기존 마우스 눌림 여부 확인 변수
   const gaugeFill = document.getElementById("gauge-fill");
-  const gauge = document.getElementById("gauge");
   const fish = document.getElementById("fish");
   const gaugeFill2 = document.getElementById("gauge-fill2"); // 두 번째 게이지
   let gaugePosition = 50; // 초록색 게이지의 초기 위치 (50%)
@@ -12,14 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const minFishPosition = 0;
   const maxFishPosition = 1750;
 
-  const gaugeSpeed = 5; // 게이지 속도
+  const gaugeSpeed = 10; // 게이지 속도
   let fishPosition = 0; // 물고기 초기 위치
   const fishSpeed = 25; // 물고기 속도 (물고기의 이동 속도)
   let fishDirection = 1; // 1이면 내려가고, -1이면 올라가는 방향
 
   const minGaugeFill2Height = 0; // 두 번째 게이지의 최소 높이 (0%)
   const maxGaugeFill2Height = 100; // 두 번째 게이지의 최대 높이 (100%)
-  const gaugeFill2Speed = 1; // 두 번째 게이지 차오르는 속도 (0~100)
+  const gaugeFill2Speed = 0.5; // 두 번째 게이지 차오르는 속도 (0~100)
 
   let targetGaugeFill2Height = minGaugeFill2Height; // 두 번째 게이지의 목표 높이
   let currentGaugeFill2Height = minGaugeFill2Height; // 두 번째 게이지의 현재 높이
